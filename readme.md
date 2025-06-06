@@ -21,6 +21,7 @@ Barras de Progresso
 Sistema de Watchdog para Detecção de Travamentos
 Exemplo Completo do Arquivo .gui.dnr
 Prompts para Abrir o Chat
+
 1. Configuração Principal e Janela
 Define as propriedades principais da janela, incluindo:
 
@@ -30,12 +31,14 @@ resizable: Define se a janela pode ser redimensionada.
 minimizable: Define se a janela pode ser minimizada.
 on_start: Callback para inicialização da GUI.
 on_close: Callback para fechamento da GUI.
+
 2. Registro de Funções e Callbacks de Eventos
 A seção [fn] registra as funções permitidas pela GUI. Cada função é definida com:
 
 fname: Nome da função em si.
 type: Define se a função é síncrona (sync) ou assíncrona (async).
 desc: Descrição da função.
+
 3. Suporte a Múltiplos Idiomas
 O TranslationManager carrega arquivos de idiomas (en.lang, pt.lang, etc.) em formato chave-valor. Os textos dentro da GUI fazem referência a chaves de tradução ao invés de textos fixos.
 
@@ -45,6 +48,7 @@ lang
 Copy code
 button_confirm = "Confirmar"
 text_welcome = "Bem-vindo ao app"
+
 4. Configuração de Temas
 Temas permitem customização de cores e estilos, definidos como [themes.nome_do_tema]. Cada elemento da GUI pode herdar o tema ativo, facilitando a troca entre temas claro e escuro.
 
@@ -57,6 +61,7 @@ text_color = "#000000"
 [themes.dark]
 background_color = "#333333"
 text_color = "#ffffff"
+
 5. Tela e Layouts Responsivos
 Suporta valores absolutos e em porcentagem para largura, altura e posição, permitindo design responsivo. A seção [screen] define as dimensões principais e a cor de fundo da GUI.
 
@@ -66,6 +71,7 @@ Copy code
 width = "100%"
 height = "100%"
 background_color = "themes.light.background_color"
+
 6. Atlas de Textura e Sub-Regiões
 O sistema TextureAtlas suporta vários formatos de imagem (PNG, JPEG, BMP). Define uma textura única e permite extrair subimagens específicas.
 
@@ -79,6 +85,7 @@ x = 0
 y = 0
 width = 64
 height = 64
+
 7. GUIs Primárias e Secundárias
 O sistema de GUI suporta múltiplas camadas:
 
@@ -99,6 +106,7 @@ is_primary = false
 is_modal = true
 background_opacity = 0.8
 background_color = "#555555"
+
 8. Contêineres para Organização Relativa
 Contêineres atuam como elementos de agrupamento, similar a divs em HTML. Elementos dentro de um contêiner possuem posições relativas.
 
@@ -122,6 +130,7 @@ height = "10%"
 text_color = "#000000"
 background_color = "#cccccc"
 action = "confirm"
+
 9. Sistema de Componentes Estilo React
 O sistema de componentes permite múltiplas interfaces em uma mesma janela, sendo cada uma ativável individualmente.
 
@@ -146,6 +155,7 @@ height = "8%"
 text_color = "#ffffff"
 background_color = "#4CAF50"
 action = "load_data"
+
 10. Barras de Progresso
 Exibe o progresso de uma tarefa com propriedades como min_value, max_value, current_value, e orientation.
 
@@ -163,6 +173,7 @@ current_value = 0
 orientation = "horizontal"
 color = "#007bff"
 background_color = "#cccccc"
+
 11. Sistema de Watchdog para Detecção de Travamentos
 O sistema de watchdog monitora a GUI e detecta travamentos com uma thread separada. A GUI envia heartbeats regulares para o watchdog. Se um timeout ocorrer, um callback é executado (ex.: log, reinicialização do app).
 
